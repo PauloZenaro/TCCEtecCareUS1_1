@@ -1,0 +1,44 @@
+﻿@model CareUS1_1.Models.Contato
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Contato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GuidContato" />
+            <div class="form-group">
+                <label asp-for="fkIdCliente" class="control-label"></label>
+                <input asp-for="fkIdCliente" class="form-control" />
+                <span asp-validation-for="fkIdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefone" class="control-label"></label>
+                <input asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nomeContato" class="control-label"></label>
+                <input asp-for="nomeContato" class="form-control" />
+                <span asp-validation-for="nomeContato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

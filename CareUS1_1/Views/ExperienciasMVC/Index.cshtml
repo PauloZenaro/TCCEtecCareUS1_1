@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CareUS1_1.Models.Experiencia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fkGuidCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descricaoExperiencia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fkGuidCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descricaoExperiencia)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GuidExperiencia">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.GuidExperiencia">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GuidExperiencia">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
